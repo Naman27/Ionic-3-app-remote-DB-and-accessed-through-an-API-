@@ -1,29 +1,53 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+import { LearnFeedPage } from '../pages/learn-feed/learn-feed';
+import { LearnDetailsPage } from '../pages/learn-details/learn-details';
+import { QuestionDetailsPage } from '../pages/question-details/question-details';
+import { ManageQuestionPage } from '../pages/manage-question/manage-question';
+import { ManageAnswerPage } from '../pages/manage-answer/manage-answer';
+
+import { QuestionService } from '../services/question.service';
+import { AnswerService } from '../services/answer.service';
+import { LearnService } from '../services/learn.service';
+
+import { BrowserModule } from '@angular/platform-browser';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { SDKBrowserModule } from '../../sdk/index';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    LearnFeedPage,
+    LearnDetailsPage,
+    QuestionDetailsPage,
+    ManageQuestionPage,
+    ManageAnswerPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    SDKBrowserModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    LearnFeedPage,
+    LearnDetailsPage,
+    QuestionDetailsPage,
+    ManageQuestionPage,
+    ManageAnswerPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    QuestionService,
+    AnswerService,
+    LearnService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
