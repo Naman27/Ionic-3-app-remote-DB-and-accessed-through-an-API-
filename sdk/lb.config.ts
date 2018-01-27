@@ -2,22 +2,7 @@
 /**
 * @module LoopBackConfig
 * @description
-*
-* The LoopBackConfig module help developers to externally 
-* configure the base url and api version for loopback.io
-*
-* Example
-*
-* import { LoopBackConfig } from './sdk';
-* 
-* @Component() // No metadata needed for this module
-*
-* export class MyApp {
-*   constructor() {
-*     LoopBackConfig.setBaseURL('http://localhost:3000');
-*     LoopBackConfig.setApiVersion('api');
-*   }
-* }
+
 **/
 export class LoopBackConfig {
   private static path: string = '//0.0.0.0:3000';
